@@ -1,0 +1,16 @@
+{
+  "name": "Plemiona",
+  "version": "1.0",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": ["https://pl184.plemiona.pl/game.php?village=5862&screen=am_farm"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_title": "Farm",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["tabs"]
+}
