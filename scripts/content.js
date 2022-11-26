@@ -4,7 +4,7 @@ const ASSISTANT_FARMER_LOCATION = "am_farm"
 
 const config = {
   timeout: 500,
-  reload: 100 * 60 * 5,
+  reload: 1000 * 60 * 5,
 };
 
 const farm = () => {
