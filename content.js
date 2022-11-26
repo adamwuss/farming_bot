@@ -19,8 +19,8 @@ const farm = () => {
     const unitItemLight = Number(document.querySelector(".unit-item-light").innerHTML);
 
     if (i < templateB.length && unitItemLight >= 3) {
-      i++
       templateB[i].click();
+      i++
     } else {
       clearInterval(idInterval);
       console.log("Farm NOT working");
