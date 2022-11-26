@@ -1,4 +1,6 @@
 const templateB = document.querySelectorAll("td .farm_icon_b");
+const currentLocation = document.location.search.split("=")[2];
+const ASSISTANT_FARMER_LOCATION = "am_farm"
 
 const config = {
   timeout: 500,
@@ -15,16 +17,18 @@ const farm = () => {
   const idInterval = setInterval(() => {
     const unitItemLight = Number(document.querySelector(".unit-item-light").innerHTML);
 
-    if (i <= templateB.length && unitItemLight >= 3) {
+    if (i < templateB.length && unitItemLight >= 3) {
       i++
       templateB[i].click();
     } else {
-      clearInterval(idInterval)
+      clearInterval(idInterval);
     }
   }, config.timeout);
 };
 
-farm();
+if (currentLocation === ASSISTANT_FARMER_LOCATION) {
+  farm();
+}
 
 setInterval(() => {
   document.location.reload();
