@@ -7,10 +7,6 @@ const config = {
   reload: 100 * 60 * 5,
 };
 
-chrome.runtime.onMessage.addListener(function (request) {
-  alert(request);
-})
-
 const farm = () => {
   console.log("Farm working");
   let i = 1;

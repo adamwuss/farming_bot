@@ -8,9 +8,5 @@
       "js": ["scripts/content.js"]
     }
   ],
-  "action": {
-    "default_title": "Farm",
-    "default_popup": "popup/popup.html"
-  },
   "permissions": ["tabs"]
 }
