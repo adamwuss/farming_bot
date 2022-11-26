@@ -1,9 +1,12 @@
-const bLinks = document.querySelectorAll("td .farm_icon_b");
+const templateB = document.querySelectorAll("td .farm_icon_b");
 
-let timeout = 338;
+const config = {
+  timeout: 500,
+  reload: 100 * 60 * 5,
+};
 
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  alert(request)
+chrome.runtime.onMessage.addListener(function (request) {
+  alert(request);
 })
 
 const farm = () => {
@@ -12,19 +15,17 @@ const farm = () => {
   const idInterval = setInterval(() => {
     const unitItemLight = Number(document.querySelector(".unit-item-light").innerHTML);
 
-    if (i < bLinks.length && unitItemLight >= 3) {
-      bLinks[i].click();
-      timeout = Math.random() * 100 % 200 + 1000;
+    if (i <= templateB.length && unitItemLight >= 3) {
       i++
-
+      templateB[i].click();
     } else {
       clearInterval(idInterval)
     }
-  }, timeout);
-}
+  }, config.timeout);
+};
 
 farm();
 
 setInterval(() => {
-  document.location.reload()
-}, 1000 * 60 * 5)
+  document.location.reload();
+}, config.reload);
