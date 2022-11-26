@@ -12,6 +12,7 @@ chrome.runtime.onMessage.addListener(function (request) {
 })
 
 const farm = () => {
+  console.log("Farm working");
   let i = 1;
 
   const idInterval = setInterval(() => {
@@ -22,6 +23,7 @@ const farm = () => {
       templateB[i].click();
     } else {
       clearInterval(idInterval);
+      console.log("Farm NOT working");
     }
   }, config.timeout);
 };
