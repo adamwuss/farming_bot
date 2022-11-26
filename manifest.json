@@ -4,13 +4,13 @@
   "manifest_version": 3,
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "matches": ["https://*.plemiona.pl/*"],
+      "js": ["scripts/content.js"]
     }
   ],
   "action": {
     "default_title": "Farm",
-    "default_popup": "popup.html"
+    "default_popup": "popup/popup.html"
   },
   "permissions": ["tabs"]
 }
