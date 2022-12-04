@@ -7,6 +7,8 @@ const config = {
   reload: 1000 * 60 * 5,
 };
 
+const isFarmLocation = currentLocation === ASSISTANT_FARMER_LOCATION;
+
 const farm = () => {
   console.log("Farm working");
   let i = 1;
@@ -24,10 +26,12 @@ const farm = () => {
   }, config.timeout);
 };
 
-if (currentLocation === ASSISTANT_FARMER_LOCATION) {
+if (isFarmLocation) {
   farm();
 }
 
 setInterval(() => {
+  if (isFarmLocation) {
   document.location.reload();
+  }
 }, config.reload);
