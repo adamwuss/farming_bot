@@ -1,6 +1,6 @@
 const templateB = document.querySelectorAll("td .farm_icon_b");
 const currentLocation = document.location.search.split("=")[2];
-const ASSISTANT_FARMER_LOCATION = "am_farm"
+const ASSISTANT_FARMER_LOCATION = "am_farm";
 
 const config = {
   timeout: 500,
@@ -18,7 +18,7 @@ const farm = () => {
 
     if (i < templateB.length && unitItemLight >= 3) {
       templateB[i].click();
-      i++
+      i++;
     } else {
       clearInterval(idInterval);
       console.log("Farm NOT working");
