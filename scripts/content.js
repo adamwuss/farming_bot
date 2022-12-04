@@ -32,6 +32,6 @@ if (isFarmLocation) {
 
 setInterval(() => {
   if (isFarmLocation) {
-  document.location.reload();
+    document.location.reload();
   }
 }, config.reload);
