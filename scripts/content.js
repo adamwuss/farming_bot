@@ -5,6 +5,7 @@ const ASSISTANT_FARMER_LOCATION = "am_farm";
 const config = {
   timeout: 500,
   reload: 1000 * 60 * 5,
+  lightB: 5,
 };
 
 const isFarmLocation = currentLocation === ASSISTANT_FARMER_LOCATION;
@@ -16,7 +17,7 @@ const farm = () => {
   const idInterval = setInterval(() => {
     const unitItemLight = Number(document.querySelector(".unit-item-light").innerHTML);
 
-    if (i < templateB.length && unitItemLight >= 3) {
+    if (i < templateB.length && unitItemLight >= config.lightB) {
       templateB[i].click();
       i++;
     } else {
